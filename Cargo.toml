@@ -3,6 +3,8 @@ name = "buzzy"
 version = "0.1.0"
 authors = ["Michael Mc Donnell <michael@mcdonnell.dk>"]
 edition = "2018"
+license = "MIT"
+description = "A buzzy browser"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
