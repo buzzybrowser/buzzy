@@ -6,6 +6,7 @@ edition = "2018"
 license = "MIT"
 description = "A buzzy browser"
 documentation = "https://docs.rs/buzzy"
+repository = "https://github.com/buzzybrowser/buzzy"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
