@@ -13,3 +13,4 @@ readme = "README.md"
 
 [dependencies]
 bevy = { version = "0.5", features = ["dynamic"] }
+bevy_egui = "0.4"

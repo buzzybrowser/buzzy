@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: sudo apt-get install libasound2-dev libudev-dev
+        run: sudo apt-get install libasound2-dev libudev-dev libxcb-shape0-dev libxcb-xfixes0-dev
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly
@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: sudo apt-get install libasound2-dev libudev-dev
+        run: sudo apt-get install libasound2-dev libudev-dev libxcb-shape0-dev libxcb-xfixes0-dev
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: nightly
@@ -56,7 +56,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install dependencies
-        run: sudo apt-get install libasound2-dev libudev-dev
+        run: sudo apt-get install libasound2-dev libudev-dev libxcb-shape0-dev libxcb-xfixes0-dev
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal
