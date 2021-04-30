@@ -804,7 +804,7 @@ checksum = "63396b8a4b9de3f4fdfb320ab6080762242f66a8ef174c49d8e19b674db4cdbe"
 
 [[package]]
 name = "buzzy"
-version = "0.2.0"
+version = "0.2.1"
 dependencies = [
  "bevy",
  "bevy_egui",

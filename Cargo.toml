@@ -1,6 +1,6 @@
 [package]
 name = "buzzy"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Michael Mc Donnell <michael@mcdonnell.dk>"]
 edition = "2018"
 license = "MIT"
