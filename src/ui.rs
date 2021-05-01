@@ -43,7 +43,7 @@ fn main_ui(mut address: ResMut<Address>, egui_context: ResMut<EguiContext>) {
             // TODO: Select all text when clicking if there is text
             // TODO: Make address part of the tab instead of having a single one.
             let separator_and_menu_button_width = 50.0;
-            ui.add(
+            let response = ui.add(
                 egui::TextEdit::singleline(&mut address.0)
                     .hint_text("Search with Google or enter address")
                     .id_source("address_bar")
@@ -52,6 +52,9 @@ fn main_ui(mut address: ResMut<Address>, egui_context: ResMut<EguiContext>) {
                     // FIXME: Is there a less hacky way to do this?
                     .desired_width(ui.available_width() - separator_and_menu_button_width),
             );
+            if response.lost_focus() && ui.input().key_pressed(egui::Key::Enter) {
+                println!("Address bar got new address: {}", address.0);
+            }
 
             // Add separator and menu
             ui.separator();
