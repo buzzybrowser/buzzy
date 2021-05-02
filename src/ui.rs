@@ -1,7 +1,7 @@
 use bevy::prelude::*;
 use bevy_egui::{egui, EguiContext, EguiPlugin};
 
-use crate::address::Address;
+use crate::address::{Address, AddressEntered};
 pub struct SetupUIPlugin;
 
 impl Plugin for SetupUIPlugin {
@@ -14,7 +14,11 @@ impl Plugin for SetupUIPlugin {
     }
 }
 
-fn main_ui(mut address: ResMut<Address>, egui_context: ResMut<EguiContext>) {
+fn main_ui(
+    mut address: ResMut<Address>,
+    egui_context: ResMut<EguiContext>,
+    mut event_writer: EventWriter<AddressEntered>,
+) {
     let ctx = egui_context.ctx();
     // Add top panel
     // TODO: Remove top and side borders like Chrome or Firefox.
@@ -54,6 +58,9 @@ fn main_ui(mut address: ResMut<Address>, egui_context: ResMut<EguiContext>) {
             );
             if response.lost_focus() && ui.input().key_pressed(egui::Key::Enter) {
                 println!("Address bar got new address: {}", address.0);
+                event_writer.send(AddressEntered {
+                    address: address.0.clone(),
+                });
             }
 
             // Add separator and menu
